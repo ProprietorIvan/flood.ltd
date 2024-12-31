@@ -5,16 +5,108 @@ import StepsSection from '@/components/StepsSection';
 import { Droplets, Phone, Mail, ArrowRight, Waves, Shield, Clock } from 'lucide-react';
 import { useRouter } from 'next/router';
 import Image from 'next/image';
+import Head from 'next/head';
 
 const Home = () => {
   const router = useRouter();
+
+  const seoTitle = "Flood Restoration Toronto | 24/7 Emergency Water Damage Services";
+  const seoDescription = "Toronto's premier flood restoration experts. 24/7 emergency response, professional water damage repair & restoration across GTA. IICRC certified team. Call (647) 361-0663.";
 
   const handleNavigation = (path: string) => {
     router.push(path);
   };
 
+  const handleEmergencyCall = () => {
+    window.location.href = 'tel:+1 (647) 361-0663';
+  };
+
+  const handleEmailContact = () => {
+    window.location.href = 'mailto:office@flood.ltd';
+  };
+
   return (
     <div className="min-h-screen bg-[#F5F4F0]">
+      <Head>
+        <title>{seoTitle}</title>
+        <meta name="description" content={seoDescription} />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="canonical" href="https://flood.ltd" />
+        
+        {/* OpenGraph / Social Media */}
+        <meta property="og:title" content={seoTitle} />
+        <meta property="og:description" content={seoDescription} />
+        <meta property="og:type" content="website" />
+        <meta property="og:locale" content="en_CA" />
+        <meta property="og:url" content="https://flood.ltd" />
+        <meta property="og:site_name" content="Flood Ltd." />
+        <meta property="og:image" content="https://flood.ltd/og-image.jpg" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Professional Flood Restoration Toronto" />
+
+        {/* Keywords */}
+        <meta name="keywords" content="flood restoration toronto, water damage toronto, emergency flood services gta, flood cleanup toronto, water damage repair, basement flood toronto, commercial water damage, residential flood restoration" />
+        
+        {/* Geo Tags */}
+        <meta name="geo.region" content="CA-ON" />
+        <meta name="geo.placename" content="Toronto" />
+        
+        {/* Language */}
+        <link rel="alternate" hrefLang="en-CA" href="https://flood.ltd" />
+        
+        {/* Local Business Schema */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "EmergencyService",
+            "name": "Flood Ltd.",
+            "image": "https://flood.ltd/og-image.jpg",
+            "telephone": "+1-647-361-0663",
+            "email": "office@flood.ltd",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Toronto",
+              "addressRegion": "ON",
+              "addressCountry": "CA"
+            },
+            "geo": {
+              "@type": "GeoCoordinates",
+              "latitude": "43.653226",
+              "longitude": "-79.383184"
+            },
+            "areaServed": {
+              "@type": "GeoCircle",
+              "geoMidpoint": {
+                "@type": "GeoCoordinates",
+                "latitude": "43.653226",
+                "longitude": "-79.383184"
+              },
+              "geoRadius": "50000"
+            },
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ],
+              "opens": "00:00",
+              "closes": "23:59"
+            },
+            "availableChannel": {
+              "@type": "ServiceChannel",
+              "serviceType": "Emergency Service",
+              "availableLanguage": ["English"]
+            }
+          })}
+        </script>
+      </Head>
+
       <Navigation showActions={false} />
 
       {/* Hero Section - Split Design with Diagonal */}
@@ -45,19 +137,19 @@ const Home = () => {
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <button
-                  onClick={() => handleNavigation('/flood-repair')}
+                  onClick={handleEmergencyCall}
                   className="group relative overflow-hidden bg-white text-[#8B2635] px-8 py-4 rounded-full text-lg font-medium transition-transform hover:scale-105"
                 >
                   <div className="absolute inset-0 bg-gradient-to-r from-white via-stone-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
                   <div className="relative flex items-center justify-center gap-2">
                     <Phone className="w-5 h-5" />
-                    <span>24/7 Emergency</span>
+                    <span>(647) 361-0663</span>
                     <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </button>
                 
                 <button
-                  onClick={() => handleNavigation('/contact')}
+                  onClick={handleEmailContact}
                   className="group bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white/10 transition-all hover:border-opacity-50"
                 >
                   <div className="flex items-center justify-center gap-2">
@@ -70,7 +162,6 @@ const Home = () => {
 
             <div className="relative mt-12 lg:mt-0">
               <div className="relative h-96 lg:h-128 w-full">
-                
                 <Image
                   src="/photos/homepage/1.jpg"
                   alt="Professional Flood Restoration in Toronto"
@@ -118,19 +209,19 @@ const Home = () => {
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center">
             <button
-              onClick={() => handleNavigation('/flood-repair')}
+              onClick={handleEmergencyCall}
               className="group relative overflow-hidden bg-white text-[#8B2635] px-8 py-4 rounded-full text-lg font-medium transition-transform hover:scale-105"
             >
               <div className="absolute inset-0 bg-gradient-to-r from-white via-stone-100 to-white opacity-0 group-hover:opacity-100 transition-opacity" />
               <div className="relative flex items-center justify-center gap-2">
                 <Phone className="w-5 h-5" />
-                <span>Call Now</span>
+                <span>(647) 361-0663</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </div>
             </button>
             
             <button
-              onClick={() => handleNavigation('/contact')}
+              onClick={handleEmailContact}
               className="group bg-transparent border-2 border-white text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-white/10 transition-all hover:border-opacity-50"
             >
               <div className="flex items-center justify-center gap-2">
