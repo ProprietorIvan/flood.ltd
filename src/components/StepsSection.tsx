@@ -1,23 +1,34 @@
 import React, { useState, useEffect } from 'react';
-import { Phone, Droplets, ClipboardCheck, Search, Ruler, Wrench, PaintBucket, CheckCircle } from 'lucide-react';
+import { Phone, Droplets, ClipboardCheck, Search, Ruler, Wrench, PaintBucket, CheckCircle, ChevronRight } from 'lucide-react';
 
-// Utility function for conditional class names
-function cn(...classes: (string | boolean | undefined)[]) {
-  return classes.filter(Boolean).join(' ');
+interface Metric {
+  value: string;
+  label: string;
+}
+
+interface ProcessStep {
+  id: number;
+  icon: any;
+  phase: string;
+  title: string;
+  description: string;
+  timing: string;
+  primaryPoints: string[];
+  details: string[];
 }
 
 const StepsSection = () => {
   const [activeStep, setActiveStep] = useState<number | null>(null);
-  const [expandedDetails, setExpandedDetails] = useState<number | null>(null);
+  const [selectedPhase, setSelectedPhase] = useState<number>(1);
 
-  const metrics = [
+  const metrics: Metric[] = [
     {
       value: "500+",
       label: "PROPERTIES RESTORED"
     },
     {
-      value: "60min",
-      label: "RESPONSE TIME"
+      value: "45min",
+      label: "GTA RESPONSE TIME"
     },
     {
       value: "24/7",
@@ -29,16 +40,16 @@ const StepsSection = () => {
     }
   ];
 
-  const processSteps = [
+  const processSteps: ProcessStep[] = [
     {
       id: 1,
       icon: Phone,
       phase: "EMERGENCY PHASE",
       title: "Initial Response",
-      description: "24/7 emergency response and water extraction services",
+      description: "24/7 emergency response across Greater Toronto Area",
       timing: "Within hours of contact",
       primaryPoints: [
-        "Rapid emergency team deployment",
+        "Rapid GTA emergency team deployment",
         "Water source identification",
         "Initial safety assessment"
       ],
@@ -57,7 +68,7 @@ const StepsSection = () => {
       icon: Droplets,
       phase: "MITIGATION PHASE",
       title: "Professional Drying",
-      description: "Industrial-grade drying process with advanced monitoring",
+      description: "Canadian-certified drying process with advanced monitoring",
       timing: "Minimum 7-14 days",
       primaryPoints: [
         "Industrial dehumidifier deployment",
@@ -79,7 +90,7 @@ const StepsSection = () => {
       icon: Search,
       phase: "ASSESSMENT PHASE",
       title: "Damage Analysis",
-      description: "Comprehensive evaluation of all affected areas and materials",
+      description: "Ontario Building Code compliant evaluation of affected areas",
       timing: "Throughout drying (1-2 weeks)",
       primaryPoints: [
         "Structural assessment",
@@ -91,7 +102,7 @@ const StepsSection = () => {
         "Wall cavity inspection",
         "Cabinet and millwork assessment",
         "Ceiling and support evaluation",
-        "Electrical system inspection",
+        "ESA electrical inspection",
         "Plumbing system assessment",
         "HVAC system evaluation",
         "Insulation condition check",
@@ -103,7 +114,7 @@ const StepsSection = () => {
       icon: ClipboardCheck,
       phase: "DOCUMENTATION PHASE",
       title: "Insurance Coordination",
-      description: "Detailed claims management and scope development",
+      description: "Ontario insurance standards compliance and documentation",
       timing: "2-3 weeks for initial process",
       primaryPoints: [
         "Complete damage documentation",
@@ -115,7 +126,7 @@ const StepsSection = () => {
         "Moisture reading logs",
         "Line-item damage scope",
         "Material replacement specifications",
-        "Code upgrade requirements",
+        "Ontario Code upgrade requirements",
         "Additional damage documentation",
         "Price verification process",
         "Adjuster coordination",
@@ -127,7 +138,7 @@ const StepsSection = () => {
       icon: Ruler,
       phase: "PLANNING PHASE",
       title: "Material Selection",
-      description: "Comprehensive selection of replacement materials and finishes",
+      description: "Local Toronto supplier coordination and material selection",
       timing: "2-4 weeks for selections",
       primaryPoints: [
         "Flooring selection process",
@@ -151,7 +162,7 @@ const StepsSection = () => {
       icon: Wrench,
       phase: "DEMOLITION PHASE",
       title: "Removal & Preparation",
-      description: "Systematic demolition and site preparation",
+      description: "Toronto disposal regulations compliant demolition",
       timing: "1-3 weeks based on scope",
       primaryPoints: [
         "Containment setup",
@@ -166,7 +177,7 @@ const StepsSection = () => {
         "Drywall and insulation removal",
         "Subfloor inspection and removal",
         "Surface preparation",
-        "Debris removal and sorting",
+        "City-compliant debris removal",
         "Anti-microbial treatment"
       ]
     },
@@ -175,7 +186,7 @@ const StepsSection = () => {
       icon: Wrench,
       phase: "RECONSTRUCTION PHASE",
       title: "Rebuilding Process",
-      description: "Comprehensive reconstruction of affected areas",
+      description: "Ontario Building Code compliant reconstruction",
       timing: "4-12 weeks depending on scope",
       primaryPoints: [
         "Structural repairs",
@@ -185,8 +196,8 @@ const StepsSection = () => {
       details: [
         "Framing repairs or replacement",
         "Subfloor installation",
-        "Plumbing system repairs",
-        "Electrical system restoration",
+        "TSSA plumbing compliance",
+        "ESA electrical compliance",
         "HVAC system repairs",
         "Insulation installation",
         "Drywall installation",
@@ -224,7 +235,7 @@ const StepsSection = () => {
       icon: CheckCircle,
       phase: "COMPLETION PHASE",
       title: "Final Inspection",
-      description: "Quality assurance and project completion",
+      description: "Municipal and insurance compliance verification",
       timing: "1-2 weeks for final process",
       primaryPoints: [
         "Quality control inspection",
@@ -245,39 +256,44 @@ const StepsSection = () => {
     }
   ];
 
-  const handleStepHover = (index: number) => {
-    setActiveStep(index);
-  };
-
-  const handleStepLeave = () => {
-    setActiveStep(null);
-  };
-
-  const toggleDetails = (index: number) => {
-    setExpandedDetails(expandedDetails === index ? null : index);
+  // Group steps by phase
+  const phases = {
+    emergency: processSteps.slice(0, 2),
+    planning: processSteps.slice(2, 5),
+    execution: processSteps.slice(5, 7),
+    completion: processSteps.slice(7, 9)
   };
 
   return (
     <div className="w-full">
-      {/* Metrics Section */}
-      <div className="w-full bg-gradient-to-b from-[#8B2635] to-[#6B1D29] py-20">      
+      {/* Enhanced Metrics Section with Parallax-like scroll effect */}
+      <div className="relative w-full bg-gradient-to-br from-[#8B2635] via-[#7A2230] to-[#6B1D29] py-24 overflow-hidden">
+        <div className="absolute inset-0 bg-[url('/texture/noise.png')] opacity-5" />
+        <div className="absolute inset-0 bg-grid-white/10 bg-[size:32px_32px] opacity-20" />
+        
         <div className="max-w-6xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-white mb-2">BY THE NUMBERS</h2>
-            <div className="flex items-center justify-center">
-              <div className="h-px w-12 bg-white"></div>
-              <p className="text-stone-300 mx-4">Fast Response, Reliable Results</p>
-              <div className="h-px w-12 bg-white"></div>
+          <div className="text-center mb-20 relative">
+            <div className="inline-block">
+              <h2 className="text-5xl font-bold text-white mb-4">BY THE NUMBERS</h2>
+              <div className="h-1 w-24 bg-white mx-auto rounded-full" />
             </div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
             {metrics.map((metric, index) => (
-              <div key={index} className="text-center group">
-                <div className="flex flex-col items-center p-6 rounded-lg transition-all duration-300 hover:bg-[#7A2230]">
-                  <div className="text-5xl font-bold text-white mb-2">{metric.value}</div>
-                  <div className="h-px w-12 bg-white mb-4 group-hover:w-16 transition-all duration-300"></div>
-                  <div className="text-sm text-stone-300 tracking-wider">{metric.label}</div>
+              <div 
+                key={index} 
+                className="relative group"
+              >
+                <div className="absolute inset-0 bg-white/5 rounded-2xl transform group-hover:scale-105 transition-transform duration-500" />
+                <div className="relative p-8 text-center">
+                  <div className="text-6xl font-bold text-white mb-4 transform group-hover:-translate-y-1 transition-transform duration-300">
+                    {metric.value}
+                  </div>
+                  <div className="h-0.5 w-12 bg-white/30 mx-auto mb-4 transform group-hover:w-24 transition-all duration-300" />
+                  <div className="text-sm text-stone-300 tracking-wider group-hover:text-white transition-colors duration-300">
+                    {metric.label}
+                  </div>
                 </div>
               </div>
             ))}
@@ -285,23 +301,37 @@ const StepsSection = () => {
         </div>
       </div>
 
-      {/* Process Timeline Section */}
-      <section className="py-16 px-5 bg-[#F5F4F0]">
+      {/* Enhanced Process Timeline Section */}
+      <section className="py-24 px-5 bg-[#F5F4F0]">
         <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-2 text-[#1C1917]">RESTORATION PROCESS</h2>
-            <div className="flex items-center justify-center">
-              <div className="h-px w-12 bg-[#8B2635]"></div>
-              <p className="mx-4 text-[#44403C]">Professional Restoration Timeline</p>
-              <div className="h-px w-12 bg-[#8B2635]"></div>
-            </div>
-            <p className="mt-6 text-lg text-[#44403C] max-w-3xl mx-auto">
-              While we respond quickly to emergencies, quality restoration requires proper time 
-              and attention to detail. Our comprehensive process typically spans 6 weeks to 6 months, 
-              ensuring every aspect is handled with precision and care.
+          <div className="text-center mb-20">
+            <h2 className="text-5xl font-bold mb-4 text-[#1C1917]">THE PROCESS</h2>
+            <div className="h-1 w-24 bg-[#8B2635] mx-auto rounded-full mb-6" />
+            <p className="text-lg text-[#44403C] max-w-3xl mx-auto">
+              We understand Toronto&apos;s unique challenges with water damage. Our comprehensive process 
+              ensures every aspect meets Ontario building codes while delivering exceptional results.
             </p>
           </div>
 
+          {/* Phase Navigation */}
+          <div className="flex flex-wrap justify-center gap-4 mb-16">
+            {['Emergency', 'Planning', 'Execution', 'Completion'].map((phase, index) => (
+              <button
+                key={phase}
+                onClick={() => setSelectedPhase(index + 1)}
+                className={`
+                  px-6 py-3 rounded-full text-sm font-medium transition-all duration-300
+                  ${selectedPhase === index + 1 
+                    ? 'bg-[#8B2635] text-white shadow-lg scale-105' 
+                    : 'bg-white/50 text-[#1C1917] hover:bg-white'}
+                `}
+              >
+                {phase} Phase
+              </button>
+            ))}
+          </div>
+
+          {/* Steps Grid with Enhanced Interaction */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {processSteps.map((step, index) => {
               const Icon = step.icon;
@@ -311,43 +341,46 @@ const StepsSection = () => {
                 <div
                   key={step.id}
                   className={`
-                    relative p-6 rounded-xl transition-all duration-300 
-                    ${isActive ? 'bg-white shadow-lg scale-105' : 'bg-transparent hover:bg-white/50'}
-                    cursor-pointer group
+                    group relative p-8 rounded-2xl transition-all duration-500
+                    ${isActive ? 'bg-white shadow-xl scale-105' : 'bg-white/50 hover:bg-white hover:shadow-lg'}
                   `}
-                  onMouseEnter={() => handleStepHover(index)}
-                  onMouseLeave={handleStepLeave}
+                  onMouseEnter={() => setActiveStep(index)}
+                  onMouseLeave={() => setActiveStep(null)}
                 >
-                  <div className="absolute top-0 right-0 w-24 h-24 bg-[#8B2635] opacity-5 rounded-bl-full transition-all duration-300 group-hover:w-32 group-hover:h-32" />
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[#8B2635] opacity-5 rounded-bl-full" />
                   
                   <div className="relative z-10">
-                    <div className="flex items-center mb-4">
+                    <div className="flex items-start gap-4 mb-6">
                       <div className={`
-                        w-12 h-12 rounded-full flex items-center justify-center
+                        w-14 h-14 rounded-xl flex items-center justify-center
                         ${isActive ? 'bg-[#8B2635] text-white' : 'bg-[#8B2635]/10 text-[#8B2635]'}
-                        transition-all duration-300
+                        transition-all duration-300 transform group-hover:scale-110
                       `}>
-                        <Icon className="w-6 h-6" />
+                        <Icon className="w-7 h-7" />
                       </div>
-                      <div className="ml-4 flex-1">
-                        <div className="flex items-center">
-                          <span className="text-sm font-bold text-[#8B2635]">STEP {step.id}</span>
+                      <div>
+                        <div className="flex items-center gap-2 mb-1">
+                          <span className="text-sm font-medium text-[#8B2635]">STEP {step.id}</span>
+                          <ChevronRight className="w-4 h-4 text-[#8B2635]" />
+                          <span className="text-sm text-stone-500">{step.phase}</span>
                         </div>
-                        <h3 className="font-bold text-[#1C1917]">{step.title}</h3>
+                        <h3 className="text-xl font-bold text-[#1C1917]">{step.title}</h3>
                       </div>
                     </div>
 
                     <p className="text-[#44403C] mb-4">{step.description}</p>
                     
                     <div className={`
-                      space-y-2 overflow-hidden transition-all duration-300
+                      space-y-3 overflow-hidden transition-all duration-500
                       ${isActive ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'}
                     `}>
-                      <div className="text-sm font-medium text-[#8B2635] mb-2">{step.timing}</div>
+                      <div className="text-sm font-medium text-[#8B2635] mb-3">
+                        {step.timing}
+                      </div>
                       <ul className="space-y-2">
                         {step.details.map((detail, idx) => (
-                          <li key={idx} className="flex items-start gap-2 text-sm text-[#44403C]">
-                            <div className="w-1 h-1 rounded-full bg-[#8B2635] mt-2 flex-shrink-0" />
+                          <li key={idx} className="flex items-start gap-3 text-sm text-[#44403C]">
+                            <div className="w-1.5 h-1.5 rounded-full bg-[#8B2635] mt-2 flex-shrink-0" />
                             {detail}
                           </li>
                         ))}

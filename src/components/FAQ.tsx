@@ -5,7 +5,7 @@ const FAQ = () => {
   const faqData = [
     {
       question: "How quickly can you respond to a flood emergency?",
-      answer: "We guarantee a 60-minute response time for emergencies across Brooklyn. Our rapid response team is available 24/7, fully equipped with industrial-grade water extraction and drying equipment to begin mitigation immediately."
+      answer: "We guarantee a 30-minute response time for emergencies across the Greater Toronto Area. Our rapid response team is available 24/7, fully equipped with industrial-grade water extraction and drying equipment to begin mitigation immediately."
     },
     {
       question: "What should I do while waiting for your team to arrive?",
@@ -13,7 +13,7 @@ const FAQ = () => {
     },
     {
       question: "Do you work with insurance companies?",
-      answer: "Yes, we work directly with all major insurance companies in Brooklyn. We document everything thoroughly, provide detailed reports, and can help guide you through the claims process. We understand how to properly document water damage to ensure maximum coverage."
+      answer: "Yes, we work directly with all major insurance companies in Ontario. We document everything thoroughly, provide detailed reports, and can help guide you through the claims process. We understand how to properly document water damage to ensure maximum coverage."
     },
     {
       question: "How do you prevent mold after water damage?",
@@ -24,8 +24,8 @@ const FAQ = () => {
       answer: "The timeline varies depending on the extent of water damage, but typically: Water extraction takes 2-4 hours, drying takes 2-3 days, and full restoration can take 5-7 days for standard projects. We&apos;ll provide you with a detailed timeline after our initial assessment."
     },
     {
-      question: "What areas of Brooklyn do you serve?",
-      answer: "We serve all Brooklyn neighborhoods including Williamsburg, DUMBO, Park Slope, Bedford-Stuyvesant, Crown Heights, and beyond. Our multiple teams are strategically positioned throughout Brooklyn to ensure rapid response anywhere in the borough."
+      question: "What areas of Toronto do you serve?",
+      answer: "We serve all areas across the GTA including Downtown Toronto, North York, Scarborough, Etobicoke, Mississauga, and beyond. Our multiple teams are strategically positioned throughout the Greater Toronto Area to ensure rapid response anywhere in the region."
     }
   ];
 

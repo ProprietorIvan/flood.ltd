@@ -12,7 +12,7 @@ const FloodRepair = () => {
   });
 
   const handleEmergencyCall = () => {
-    window.location.href = 'tel:+1 (833) 324-2818';
+    window.location.href = 'tel:+1 (647) 361-0663';
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -32,7 +32,7 @@ const FloodRepair = () => {
     {
       icon: <Clock className="w-6 h-6" />,
       title: "60-Minute Response",
-      description: "Fast emergency response across Brooklyn"
+      description: "Fast emergency response across GTA"
     },
     {
       icon: <Shield className="w-6 h-6" />,
@@ -48,20 +48,20 @@ const FloodRepair = () => {
 
   const benefits = [
     {
-      title: "Respect & Customer Satisfaction",
-      description: "Your satisfaction is our top priority. We focus on meeting your needs with exceptional service."
+      title: "Excellence in Service",
+      description: "We deliver outstanding results by putting your needs first and exceeding expectations every time."
     },
     {
-      title: "Transparent Pricing",
-      description: "High-quality services at competitive rates with no hidden costs."
+      title: "Clear & Fair Pricing",
+      description: "Straightforward pricing structure without surprises, ensuring quality work at reasonable rates."
     },
     {
-      title: "Professional Expertise",
-      description: "Our skilled team delivers reliable repairs with a commitment to excellence."
+      title: "Expert Workmanship",
+      description: "Our certified specialists bring years of experience and technical mastery to every project."
     },
     {
-      title: "Client-First Approach",
-      description: "We enhance your property's value through meticulous repair and restoration."
+      title: "Results-Driven Focus",
+      description: "We protect and restore your property value through careful attention to detail and quality."
     }
   ];
 
@@ -95,7 +95,7 @@ const FloodRepair = () => {
               className="group inline-flex items-center justify-center gap-3 bg-[#8B2635] text-white px-8 py-6 rounded-full text-2xl font-bold hover:bg-[#7A2230] transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <Phone className="w-8 h-8" />
-              <span>+1 (833) 324-2818</span>
+              <span>+1 (647) 361-0663</span>
               <ArrowRight className="w-6 h-6 group-hover:translate-x-1 transition-transform" />
             </button>
             <p className="mt-4 text-[#44403C] text-lg">
@@ -120,9 +120,9 @@ const FloodRepair = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="max-w-3xl mx-auto text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6">Brooklyn&apos;s Most Trusted Flood Repair Experts</h2>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Toronto&apos;s Most Trusted Flood Repair Experts</h2>
             <p className="text-lg text-[#44403C] leading-relaxed">
-              When your property faces flood damage, you need a reliable partner for quick and effective repairs. Our team is dedicated to minimizing further damage and promptly starting the repair and reconstruction process. With over 20 years of experience in flood damage repair and property restoration, you can trust us to bring your home back to its original condition.
+            If your property has been impacted by flooding, you need a dependable partner for fast and efficient repairs. Our experienced team prioritizes preventing additional damage and begins reconstruction without delay. With over 20 years of expertise in flood damage repair and property restoration, you can count on us to restore your home to its original condition.
             </p>
           </div>
 
@@ -152,7 +152,7 @@ const FloodRepair = () => {
             </div>
             <h2 className="text-3xl font-bold mb-4">Get Immediate Assistance</h2>
             <p className="text-lg text-[#44403C]">
-              For fastest service call: <span className="font-semibold">+1 (833) 324-2818</span>
+              For fastest service call: <span className="font-semibold">+1 (647) 361-0663</span>
             </p>
           </div>
 
