@@ -7,67 +7,67 @@ const DrywallPaintServices = () => {
   const [customerType, setCustomerType] = useState<'residential' | 'commercial' | null>(null);
 
   const handleEmergencyCall = () => {
-    window.location.href = 'tel:+17182345678';
+    window.location.href = 'tel:+1 (647) 361-0663';
   };
 
   const serviceFeatures = [
     {
       icon: <Wrench className="w-6 h-6" />,
-      title: "Expert Restoration",
-      description: "Specialized in water damage repair and restoration"
+      title: "GTA Specialists",
+      description: "Your local Toronto water damage restoration experts"
     },
     {
       icon: <Paintbrush className="w-6 h-6" />,
-      title: "Quality Materials",
-      description: "Using water-resistant and mold-resistant materials"
+      title: "Premium Solutions",
+      description: "Industry-leading materials and techniques"
     },
     {
       icon: <Clock className="w-6 h-6" />,
-      title: "Fast Response",
-      description: "Quick assessment and rapid restoration process"
+      title: "Rapid Response",
+      description: "60-minute emergency response across the GTA"
     },
     {
       icon: <Shield className="w-6 h-6" />,
-      title: "Guaranteed Work",
-      description: "Full warranty on all restoration services"
+      title: "Certified Results",
+      description: "Fully licensed and insured in Ontario"
     }
   ];
 
   const serviceTypes = [
     {
-      title: "Water Damage Repair",
+      title: "Flood Recovery",
       points: [
-        "Emergency water extraction",
-        "Structural drying",
+        "Priority water removal",
+        "Advanced dehumidification",
         "Mold prevention",
-        "Complete restoration"
+        "Full property restoration"
       ]
     },
     {
-      title: "Drywall Restoration",
+      title: "Wall Restoration",
       points: [
-        "Water-damaged wall removal",
-        "Moisture barrier installation",
-        "New drywall installation",
-        "Perfect finish matching"
+        "Flood damage repair",
+        "Vapor barrier systems",
+        "Quality drywall installation",
+        "Expert finishing"
       ]
     },
     {
-      title: "Painting Services",
+      title: "Elite Finishing",
       points: [
-        "Surface preparation",
-        "Water damage sealing",
-        "Color matching",
-        "Complete repainting"
+        "Complete preparation",
+        "Moisture-proof coating",
+        "Perfect color matching",
+        "Professional painting"
       ]
     },
     {
-      title: "Additional Services",
+      title: "Additional Care",
       points: [
-        "Texture matching",
-        "Ceiling repair",
-        "Baseboard replacement",
-        "Trim restoration"
+        "Surface texturing",
+        "Ceiling restoration",
+        "Trim replacement",
+        "Custom finishing"
       ]
     }
   ];
@@ -84,14 +84,14 @@ const DrywallPaintServices = () => {
           <div className="flex flex-col md:flex-row gap-12 items-center py-16">
             <div className="w-full md:w-1/2">
               <div className="inline-block bg-[#8B2635] text-white px-4 py-1 rounded-full text-sm font-medium mb-6">
-                Professional Drywall & Paint Services
+                Toronto Premier Restoration Services
               </div>
               <h1 className="text-5xl md:text-7xl font-bold mb-6 text-[#1C1917]">
-                Expert
-                <span className="block text-[#8B2635]">Water Damage Restoration</span>
+                Advanced
+                <span className="block text-[#8B2635]">Damage Recovery</span>
               </h1>
               <p className="text-xl text-[#44403C] mb-8 leading-relaxed">
-                Specialized in restoring water-damaged walls with expert drywall repair and professional painting services. Fast response times and guaranteed results.
+                GTA trusted experts in water damage restoration, delivering premium drywall repair and professional finishing. Fast response and superior results.
               </p>
               
               <button
@@ -99,7 +99,7 @@ const DrywallPaintServices = () => {
                 className="group inline-flex items-center justify-center gap-3 bg-[#8B2635] text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-[#7A2230] transition-all duration-300"
               >
                 <Phone className="w-6 h-6" />
-                <span>Get Emergency Service</span>
+                <span>24/7 Emergency Service</span>
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
@@ -108,7 +108,7 @@ const DrywallPaintServices = () => {
               <div className="relative h-[600px] w-full">
                 <Image
                   src="/photos/homepage/7.jpg"
-                  alt="Professional Drywall and Painting"
+                  alt="Toronto Professional Restoration"
                   fill
                   className="object-cover rounded-xl"
                   priority
@@ -124,8 +124,8 @@ const DrywallPaintServices = () => {
       <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-[#1C1917]">Professional Restoration Services</h2>
-            <p className="text-lg text-[#44403C]">Expert water damage repair and drywall restoration</p>
+            <h2 className="text-4xl font-bold mb-4 text-[#1C1917]">Elite Restoration Services</h2>
+            <p className="text-lg text-[#44403C]">Greater Toronto Area premier recovery specialists</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -144,8 +144,8 @@ const DrywallPaintServices = () => {
       <section className="py-20 bg-[#F5F4F0]">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 text-[#1C1917]">Our Services</h2>
-            <p className="text-lg text-[#44403C]">Complete water damage restoration solutions</p>
+            <h2 className="text-4xl font-bold mb-4 text-[#1C1917]">Our Expertise</h2>
+            <p className="text-lg text-[#44403C]">Comprehensive restoration solutions for Toronto properties</p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
@@ -171,16 +171,16 @@ const DrywallPaintServices = () => {
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-6 text-[#1C1917]">Guaranteed Results</h2>
+              <h2 className="text-4xl font-bold mb-6 text-[#1C1917]">Superior Standards</h2>
               <p className="text-lg text-[#44403C] mb-6 leading-relaxed">
-                Our experienced team ensures complete restoration of water-damaged walls, returning your space to its pre-damage condition with professional results.
+                Our certified team delivers comprehensive restoration services, transforming water-damaged properties across the GTA back to pristine condition.
               </p>
               <ul className="space-y-4">
                 {[
-                  "Complete water damage assessment",
-                  "Professional restoration process",
-                  "Quality materials and finishes",
-                  "Long-lasting results"
+                  "Thorough damage assessment",
+                  "Ontario-certified process",
+                  "Premium grade materials",
+                  "Guaranteed workmanship"
                 ].map((item, index) => (
                   <li key={index} className="flex items-center gap-3">
                     <CheckCircle2 className="w-5 h-5 text-[#8B2635]" />
@@ -192,7 +192,7 @@ const DrywallPaintServices = () => {
             <div className="relative h-[500px]">
               <Image
                 src="/photos/homepage/3.jpg"
-                alt="Water Damage Restoration Results"
+                alt="Toronto Water Damage Recovery"
                 fill
                 className="object-cover rounded-xl"
               />
@@ -206,7 +206,7 @@ const DrywallPaintServices = () => {
         <div className="max-w-3xl mx-auto px-4">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#1C1917]">Request Service</h2>
-            <p className="text-lg text-[#44403C]">Fast response • Professional restoration</p>
+            <p className="text-lg text-[#44403C]">60-minute response • GTA-wide service</p>
           </div>
 
           <div className="bg-white rounded-2xl shadow-lg p-8">
@@ -226,7 +226,7 @@ const DrywallPaintServices = () => {
                   }`}>
                     Residential
                   </h3>
-                  <p className="text-sm text-[#44403C]">Home restoration</p>
+                  <p className="text-sm text-[#44403C]">Toronto homes</p>
                 </button>
 
                 <button
@@ -242,7 +242,7 @@ const DrywallPaintServices = () => {
                   }`}>
                     Commercial
                   </h3>
-                  <p className="text-sm text-[#44403C]">Business property</p>
+                  <p className="text-sm text-[#44403C]">GTA businesses</p>
                 </button>
               </div>
 
@@ -272,7 +272,7 @@ const DrywallPaintServices = () => {
 
               <div>
                 <label className="block text-sm font-medium text-[#1C1917] mb-2">
-                  Address *
+                  Property Address *
                 </label>
                 <input
                   type="text"
@@ -283,12 +283,12 @@ const DrywallPaintServices = () => {
 
               <div>
                 <label className="block text-sm font-medium text-[#1C1917] mb-2">
-                  Service Details
+                  Emergency Details
                 </label>
                 <textarea
                   rows={4}
                   className="w-full px-4 py-3 rounded-lg border border-stone-200 focus:ring-2 focus:ring-[#8B2635] focus:border-transparent"
-                  placeholder="Please describe the water damage and any specific needs..."
+                  placeholder="Please describe your emergency and any specific requirements..."
                 ></textarea>
               </div>
 
@@ -296,11 +296,11 @@ const DrywallPaintServices = () => {
                 type="submit"
                 className="w-full bg-[#8B2635] text-white py-4 rounded-lg text-lg font-semibold hover:bg-[#7A2230] transition-colors duration-300"
               >
-                Request Service Now
+                Submit Emergency Request
               </button>
 
               <p className="text-sm text-[#44403C] text-center">
-                Fast response • Expert restoration • Guaranteed results
+                Immediate response • Expert restoration • Ontario certified
               </p>
             </div>
           </div>
@@ -311,17 +311,17 @@ const DrywallPaintServices = () => {
       <section className="py-16 bg-[#8B2635]">
         <div className="max-w-4xl mx-auto text-center px-4">
           <h2 className="text-3xl md:text-4xl font-bold mb-6 text-white">
-            Expert Water Damage Restoration Services
+            Toronto Emergency Recovery Team
           </h2>
           <p className="text-xl mb-8 text-stone-200">
-            Professional restoration with guaranteed results
+            Professional restoration across the Greater Toronto Area
           </p>
           <button
             onClick={handleEmergencyCall}
             className="group inline-flex items-center justify-center gap-3 bg-white text-[#8B2635] px-8 py-4 rounded-full text-xl font-bold hover:bg-stone-100 transition-all duration-300"
           >
             <Phone className="w-6 h-6" />
-            <span>Call For Service Now</span>
+            <span>Call Now</span>
             <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
           </button>
         </div>

@@ -20,32 +20,32 @@ const AboutUs = () => {
     },
     {
       number: "100%",
-      unit: "Areas",
-      label: "Brooklyn Coverage",
+      unit: "GTA",
+      label: "Coverage",
       icon: MapPin
     }
   ];
 
   const expertise = [
     {
-      title: "Rapid Emergency Response",
-      description: "When disaster strikes, every minute counts. Our team arrives within 60 minutes, fully equipped to begin water extraction immediately. No delays, no excuses.",
+      title: "Swift Emergency Response",
+      description: "When disaster strikes in the GTA, timing is crucial. Our team arrives within 60 minutes, fully equipped to begin water extraction immediately. No delays, no excuses.",
       icon: AlertTriangle,
       highlight: true
     },
     {
-      title: "Latest Restoration Technology",
-      description: "Our investment in cutting-edge equipment means faster water removal, more efficient drying, and better protection for your property.",
+      title: "Advanced Equipment",
+      description: "Our state-of-the-art Canadian-approved equipment ensures rapid water removal, efficient drying, and superior property protection in Toronto's unique climate.",
       icon: Wrench
     },
     {
-      title: "Certified & Insured",
-      description: "Every team member is certified in water damage restoration and covered by comprehensive insurance. Your property is in safe hands.",
+      title: "Licensed & Insured",
+      description: "Our team is fully licensed in Ontario, certified in water damage restoration, and backed by comprehensive insurance coverage. Your property is protected.",
       icon: Shield
     },
     {
-      title: "Transparent Process",
-      description: "From initial assessment to final restoration, you&apos;ll receive clear documentation and real-time updates throughout the entire process.",
+      title: "Clear Communication",
+      description: "From initial assessment to final restoration, we provide detailed documentation and continuous updates throughout the entire restoration process.",
       icon: BadgeCheck
     }
   ];
@@ -59,7 +59,7 @@ const AboutUs = () => {
         <div className="absolute inset-0">
           <Image
             src="/photos/homepage/1.jpg"
-            alt="Emergency Water Damage Response"
+            alt="Toronto Emergency Water Damage Response"
             fill
             className="object-cover opacity-20"
             priority
@@ -68,25 +68,25 @@ const AboutUs = () => {
         <div className="relative max-w-7xl mx-auto px-4 py-24 sm:py-32">
           <div className="max-w-3xl">
             <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
-              Your Emergency Is
-              <span className="text-[#8B2635]"> Our Priority</span>
+              Toronto Trusted
+              <span className="text-[#8B2635]"> Emergency Team</span>
             </h1>
             <p className="text-xl md:text-2xl text-stone-300 mb-8">
-              Brooklyn&apos;s dedicated water damage specialists. Fast response, modern solutions, guaranteed results.
+              Greater Toronto Area dedicated water damage specialists. Fast response, professional solutions, guaranteed results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <Link 
-                href="tel:+1 (833) 324-2818"
+                href="tel:+1 (647) 361-0663"
                 className="inline-flex items-center justify-center gap-2 bg-[#8B2635] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#7A2230] transition-colors text-lg"
               >
                 <Phone className="w-6 h-6" />
-                Emergency: +1 (833) 324-2818
+                Emergency: +1 (647) 361-0663
               </Link>
               <Link
                 href="/contact"
                 className="inline-flex items-center justify-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-black transition-colors text-lg"
               >
-                Get Free Assessment
+                Free Assessment
               </Link>
             </div>
           </div>
@@ -119,7 +119,7 @@ const AboutUs = () => {
       <div className="py-20 px-4 bg-white">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4">Why Trust Us With Your Emergency?</h2>
+            <h2 className="text-4xl font-bold mb-4">Why Choose Our Restoration Team?</h2>
             <div className="w-24 h-1 bg-[#8B2635] mx-auto mb-8"></div>
           </div>
 
@@ -168,21 +168,21 @@ const AboutUs = () => {
             <div className="space-y-8">
               <div>
                 <h3 className="text-xl font-bold mb-2">How quickly can you respond?</h3>
-                <p className="text-stone-600">We guarantee a 60-minute response time for emergency calls anywhere in Brooklyn. Our teams are strategically positioned to reach you fast.</p>
+                <p className="text-stone-600">We guarantee a 60-minute response time for emergency calls throughout the Greater Toronto Area. Our teams are strategically positioned across the GTA for rapid response.</p>
               </div>
               <div>
-                <h3 className="text-xl font-bold mb-2">Are you certified and insured?</h3>
-                <p className="text-stone-600">Yes, our team holds all required certifications in water damage restoration, and we maintain comprehensive insurance coverage for your protection.</p>
+                <h3 className="text-xl font-bold mb-2">Are you licensed and insured?</h3>
+                <p className="text-stone-600">Yes, we are fully licensed in Ontario, our team is certified in water damage restoration, and we maintain comprehensive insurance coverage for your protection.</p>
               </div>
             </div>
             <div className="space-y-8">
               <div>
-                <h3 className="text-xl font-bold mb-2">What areas do you cover?</h3>
-                <p className="text-stone-600">We service all Brooklyn neighborhoods, 24/7. From Williamsburg to Brighton Beach, we&apos;re there when you need us.</p>
+                <h3 className="text-xl font-bold mb-2">What areas do you serve?</h3>
+                <p className="text-stone-600">We service the entire Greater Toronto Area 24/7, including Toronto, North York, Scarborough, Etobicoke, Mississauga, and surrounding regions.</p>
               </div>
               <div>
                 <h3 className="text-xl font-bold mb-2">How do you handle emergencies?</h3>
-                <p className="text-stone-600">Our emergency response protocol includes immediate water extraction, damage assessment, and the deployment of industrial-grade drying equipment.</p>
+                <p className="text-stone-600">Our emergency protocol includes immediate water extraction, comprehensive damage assessment, and deployment of industrial-grade equipment suited for Toronto climate conditions.</p>
               </div>
             </div>
           </div>
@@ -193,21 +193,21 @@ const AboutUs = () => {
       <div className="bg-[#1C1917] text-white py-16 px-4">
         <div className="max-w-7xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold mb-8">
-            Don&apos;t Let Water Damage Wait
+            Toronto 24/7 Emergency Response Team
           </h2>
           <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
             <Link 
-              href="tel:+1 (833) 324-2818"
+              href="tel:+1 (647) 361-0663"
               className="inline-flex items-center gap-2 bg-[#8B2635] text-white px-8 py-4 rounded-lg font-medium hover:bg-[#7A2230] transition-colors group"
             >
               <Phone className="w-6 h-6 group-hover:animate-pulse" />
-              Call Now: +1 (833) 324-2818
+              Call Now: +1 (647) 361-0663
             </Link>
             <Link
               href="/contact"
               className="inline-flex items-center gap-2 border-2 border-white text-white px-8 py-4 rounded-lg font-medium hover:bg-white hover:text-[#1C1917] transition-colors"
             >
-              Schedule Inspection
+              Schedule Assessment
             </Link>
           </div>
         </div>
